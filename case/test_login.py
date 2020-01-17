@@ -1,7 +1,5 @@
 import time
-
 import pytest
-
 from page.page_factory import PageFactory
 from read_data.read_yaml import build_login_data
 from utils import ini_driver
@@ -19,8 +17,8 @@ class TestLogin(object):
         time.sleep(2)
         self.driver.quit()
 
-    @pytest.mark.parametrize("num,pwd", build_login_data())
-    def test_login(self, num, pwd):
+    @pytest.mark.parametrize("num,pwd,expect", build_login_data())
+    def test_login(self, num, pwd, expect):
         """测试登陆方法"""
         #
         # self.page_factory.index_page().click_mine()  # 点击我的
@@ -32,4 +30,6 @@ class TestLogin(object):
 
         self.page_factory.index_page().click_mine()  # 点击我的
         self.page_factory.mine_page().click_login_ret()  # 点击登录/注册
-        self.page_factory.login_page().logint_func(num,pwd)  # 登陆操作
+        self.page_factory.login_page().logint_func(num, pwd)  # 登陆操作
+        username_text = self.page_factory.mine_page().get_usernmae_text()  # 用户名标题
+        assert username_text in expect  # 判断断言结果

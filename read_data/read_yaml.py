@@ -10,7 +10,8 @@ def build_login_data():
         data_list = list()
         for i in data:
             data_list.append((i.get("num"),
-                              i.get("pwd")))
+                              i.get("pwd"),
+                              i.get("expect")))
         print(data_list)
         return data_list  # 返回参数数据
 

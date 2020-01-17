@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 
 # 首页页面
 mine = By.XPATH, "//*[contains(@text,'我的')]"  # 我的
+username = By.ID, "com.bjcsxq.chat.carfriend:id/mine_username_tv"  # 用户名标题
 
 # 我的页面
 login_ret = By.XPATH, "//*[contains(@text,'登录')]"  # 登陆/注册
