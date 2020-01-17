@@ -26,3 +26,9 @@ class LoginPage(BagePage):
     def click_alert_but(self):
         """点击弹出框确认按钮方法"""
         self.click_funt(self.alert_but)
+    def logint_func(self,num,pwd):
+        """登陆操作方法"""
+        self.input_phone_num(num)
+        self.input_pwd(pwd)
+        self.click_login_but()
+        self.click_alert_but()

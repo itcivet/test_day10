@@ -20,10 +20,14 @@ class TestLogin(object):
 
     def test_login(self):
         """测试登陆方法"""
+        #
+        # self.page_factory.index_page().click_mine()  # 点击我的
+        # self.page_factory.mine_page().click_login_ret()  # 点击登录/注册
+        # self.page_factory.login_page().input_phone_num("13580084109")  # 输入账号
+        # self.page_factory.login_page().input_pwd("qiya77a369")  # 输入密码
+        # self.page_factory.login_page().click_login_but()  # 点击登录
+        # self.page_factory.login_page().click_alert_but()  # 点击弹出确认按钮
 
         self.page_factory.index_page().click_mine()  # 点击我的
         self.page_factory.mine_page().click_login_ret()  # 点击登录/注册
-        self.page_factory.login_page().input_phone_num("13580084109")  # 输入账号
-        self.page_factory.login_page().input_pwd("qiya77a369")  # 输入密码
-        self.page_factory.login_page().click_login_but()  # 点击登录
-        self.page_factory.login_page().click_alert_but()  # 点击弹出确认按钮
+        self.page_factory.login_page().logint_func("13580084109", "qiya77a369")  # 登陆操作
